@@ -1,0 +1,23 @@
+.main {
+    &__header {
+        width: 80%;
+        margin: 0 auto;
+        padding: 2rem 0;
+        padding-bottom: 0;
+
+        &__title {
+            color: var(--white-color);
+            font-size: 5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        &__info {
+            color: var(--light-grey-color-1);
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+    }
+}

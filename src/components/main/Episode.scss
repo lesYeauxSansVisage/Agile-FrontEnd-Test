@@ -1,0 +1,33 @@
+.episode {
+    width: 100%;
+    color: var(--light-grey-color-1);
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--light-grey-color-2);
+
+    &__number,
+    &__title {
+        font-size: 1.5rem;
+    }
+
+    &__number {
+        margin-right: 1rem;
+    }
+
+    &__title {
+        letter-spacing: 1px;
+    }
+
+    &__play-button {
+        display: inline-block;
+
+        margin-left: auto;
+    }
+
+    &__play-icon {
+        fill: var(--light-grey-color-2);
+        height: 3rem;
+        width: 3rem;
+    }
+}
