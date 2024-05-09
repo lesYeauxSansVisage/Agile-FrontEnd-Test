@@ -1,0 +1,38 @@
+.cast {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        height: 0;
+    }
+}
+
+.cast-container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.arrow-btn {
+    position: absolute;
+    top: 50%;
+
+    &>svg {
+        stroke: var(--light-grey-color-1);
+        fill: var(--light-grey-color-1);
+        height: 3rem;
+        width: 3rem;
+    }
+
+    &--left {
+        left: 0;
+        transform: translate(calc(-100% - 1rem), -50%);
+    }
+
+    &--right {
+        right: 0;
+        transform: translate(calc(100% + 1rem), -50%);
+    }
+}
