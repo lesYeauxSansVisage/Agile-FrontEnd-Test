@@ -1,0 +1,17 @@
+.episode-synopsis {
+    width: 100%;
+
+
+    &__img-container {
+        width: 70%;
+        margin: 0 auto;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__text {
+        font-size: 1.3rem;
+    }
+}
