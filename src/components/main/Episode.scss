@@ -3,6 +3,7 @@
     color: var(--light-grey-color-1);
     padding: 1rem 0;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     border-bottom: 1px solid var(--light-grey-color-2);
 
@@ -23,11 +24,13 @@
         display: inline-block;
 
         margin-left: auto;
+
+        &>svg {
+            fill: var(--light-grey-color-2);
+            height: 3rem;
+            width: 3rem;
+        }
     }
 
-    &__play-icon {
-        fill: var(--light-grey-color-2);
-        height: 3rem;
-        width: 3rem;
-    }
+
 }
