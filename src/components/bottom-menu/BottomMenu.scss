@@ -1,0 +1,27 @@
+@import '../../sass/abstracts/mixins';
+
+.bottom-menu {
+    margin: 0 auto;
+    width: 80%;
+    height: 20vh;
+
+    @include respond(big-desktop) {
+        max-width: 100rem;
+    }
+
+    // display: grid;
+    // gap: 1.5rem 3rem;
+    // grid-template-columns: max-content auto;
+    // grid-template-rows: min-content auto;
+    // align-items: start;
+    // padding: 3rem 0;
+
+    &__options-wrapper {
+        padding: 1rem 0;
+    }
+}
+
+.awards__text {
+    font-size: 1.6rem;
+    color: var(--light-grey-color-1);
+}
