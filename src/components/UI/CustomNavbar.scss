@@ -24,7 +24,18 @@
         list-style-type: none;
 
         @include respond(phone) {
-            overflow-x: scroll;
+            overflow: scroll;
+        }
+
+        &>svg {
+            margin-left: auto;
+            width: 3rem;
+            height: 3rem;
+            padding-bottom: 1rem;
+
+            flex-shrink: 0;
+
+
         }
     }
 
@@ -42,7 +53,8 @@
         transition: all 0.5s ease-in-out;
 
         @include respond(phone) {
-            text-wrap: nowrap;
+            word-wrap: nowrap;
+            white-space: nowrap;
         }
 
         &:hover,
@@ -74,4 +86,11 @@
             }
         }
     }
+}
+
+.icon-container {
+    width: 3rem;
+    height: 3rem;
+
+    flex-shrink: 0;
 }
