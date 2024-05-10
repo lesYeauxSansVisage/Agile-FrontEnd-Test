@@ -3,6 +3,7 @@ import "./Episode.scss";
 import EpisodeSynopsis from "./EpisodeSynopsis";
 import { PlaySmallPlayerIcon } from "../Icons";
 import PropTypes from "prop-types";
+import { AnimatePresence } from "framer-motion";
 
 const Episode = ({
   episodeNumber,
@@ -34,13 +35,15 @@ const Episode = ({
         <PlaySmallPlayerIcon />
       </button>
 
-      {isSynopsisVisible && (
-        <EpisodeSynopsis
-          ref={ref}
-          synopsis={episodeSynopsis}
-          img={episodeImage}
-        />
-      )}
+      <AnimatePresence>
+        {isSynopsisVisible && (
+          <EpisodeSynopsis
+            ref={ref}
+            synopsis={episodeSynopsis}
+            img={episodeImage}
+          />
+        )}
+      </AnimatePresence>
     </li>
   );
 };
