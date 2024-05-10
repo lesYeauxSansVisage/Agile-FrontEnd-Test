@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Cast.scss";
+import { motion } from "framer-motion";
 import CastItem from "./CastItem";
 import { useRef } from "react";
 import { LeftArrowIcon, RightArrowIcon } from "../../Icons";
@@ -57,7 +58,14 @@ const Cast = () => {
 
   return (
     <>
-      <div className="cast-container">
+      <motion.div
+        className="cast-container"
+        key={"cast"}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        exit={{ opacity: 0, transition: 1 }}
+      >
         {!leftArrowHidden && (
           <button
             className="arrow-btn arrow-btn--left"
@@ -85,7 +93,7 @@ const Cast = () => {
             <CastItem key={item.ID} actor={item.Name} />
           ))}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

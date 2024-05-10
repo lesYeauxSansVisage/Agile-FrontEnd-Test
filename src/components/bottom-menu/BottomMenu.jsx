@@ -3,6 +3,7 @@ import General from "./General/General";
 import "./BottomMenu.scss";
 import Cast from "./Cast/Cast";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const BottomMenu = () => {
   const bottomNavbarLabels = [
@@ -25,7 +26,16 @@ const BottomMenu = () => {
     content = <Cast />;
   } else if (activeTab === "awards") {
     content = (
-      <p className="awards__text">Não há informações sobre premiações.</p>
+      <motion.p
+        key={"awards"}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        exit={{ opacity: 0, transition: 1 }}
+        className="awards__text"
+      >
+        Não há informações sobre premiações.
+      </motion.p>
     );
   }
 

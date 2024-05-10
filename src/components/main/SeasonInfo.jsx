@@ -3,6 +3,7 @@ import { useState } from "react";
 import CustomNavbar from "../UI/CustomNavbar";
 import Episode from "./Episode";
 import { useEpisode } from "../../hooks/UseEpisode";
+import { motion } from "framer-motion";
 
 const SeasonInfo = () => {
   const { episodeData } = useEpisode();
@@ -44,7 +45,14 @@ const SeasonInfo = () => {
           setActiveTab={changeActiveTab}
           activeTab={activeTab}
         />
-        <ul className="season-info__episodes">
+        <motion.ul
+          key={activeTab}
+          className="season-info__episodes"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          exit={{ opacity: 0, transition: 1 }}
+        >
           {currentSeasonEpisodes.map((episode) => (
             <Episode
               key={episode.ID}
@@ -54,7 +62,7 @@ const SeasonInfo = () => {
               episodeImage={episode.Image}
             />
           ))}
-        </ul>
+        </motion.ul>
       </div>
     </section>
   );

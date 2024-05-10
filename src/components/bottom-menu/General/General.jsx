@@ -2,6 +2,7 @@ import { useTvShow } from "../../../hooks/UseTvShow";
 import { AddIcon, RecIcon, SadIcon, ShareIcon } from "../../Icons";
 import "./General.scss";
 import GeneralOptionButton from "./GeneralOptionButton";
+import { motion } from "framer-motion";
 
 const General = () => {
   const { showData } = useTvShow();
@@ -11,7 +12,14 @@ const General = () => {
     : "Houve um problema ao carregar a sinopse.";
 
   return (
-    <div className="general">
+    <motion.div
+      key={"general"}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.2 }}
+      exit={{ opacity: 0, transition: 1 }}
+      className="general"
+    >
       <div className="general__buttons">
         <GeneralOptionButton buttonLabel="Minha Lista">
           <AddIcon />
@@ -30,7 +38,7 @@ const General = () => {
         <h2 className="synopsis__title">Sinopse</h2>
         <p className="synopsis__text">{synopsis}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
