@@ -1,14 +1,15 @@
+import { LogoTelecineIcon } from "../Icons";
 import "./CustomNavbar.scss";
 import PropTypes from "prop-types";
 
-const CustomNavbar = ({ labels, setActiveTab, activeTab }) => {
+const CustomNavbar = ({ labels, setActiveTab, activeTab, hasIcon }) => {
   const handleItemClick = (labelId) => {
     setActiveTab(labelId);
   };
 
   return (
     <nav className="custom-navbar">
-      <ul className="custom-navbar__options">
+      <ul className="custom-navbar__options no-scrollbar">
         {labels.map((label) => (
           <li
             key={label.id}
@@ -21,6 +22,8 @@ const CustomNavbar = ({ labels, setActiveTab, activeTab }) => {
             {label.label}
           </li>
         ))}
+
+        {hasIcon && <LogoTelecineIcon />}
       </ul>
     </nav>
   );
@@ -32,6 +35,7 @@ CustomNavbar.propTypes = {
   ).isRequired,
   setActiveTab: PropTypes.func.isRequired,
   activeTab: PropTypes.string.isRequired,
+  hasIcon: PropTypes.bool.isRequired,
 };
 
 export default CustomNavbar;
