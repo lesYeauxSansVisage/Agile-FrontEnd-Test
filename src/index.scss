@@ -1,0 +1,14 @@
+@import 'sass/abstracts/variables';
+@import 'sass/base/base';
+@import 'sass/base/typography';
+
+
+.no-scrollbar::-webkit-scrollbar {
+    height: 0;
+    visibility: hidden;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

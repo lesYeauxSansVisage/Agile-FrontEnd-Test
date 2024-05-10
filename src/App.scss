@@ -1,12 +1,9 @@
-@import 'sass/abstracts/variables';
-@import 'sass/base/base';
-@import 'sass/base/typography';
+@import 'sass/abstracts/_mixins.scss';
 
 
 .container {
   height: 100vh;
   background: linear-gradient(90deg, rgb(26, 27, 28) 55%, rgba(0, 0, 0, 1) 100%);
-
 
   .main {
     height: calc(100vh - 18rem);
