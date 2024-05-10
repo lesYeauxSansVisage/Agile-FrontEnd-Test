@@ -6,9 +6,9 @@ import { useState } from "react";
 
 const BottomMenu = () => {
   const bottomNavbarLabels = [
-    { id: "general", labelText: "Geral" },
-    { id: "cast", labelText: "Elenco" },
-    { id: "awards", labelText: "Principais Prêmios" },
+    { id: "general", label: "Geral" },
+    { id: "cast", label: "Elenco" },
+    { id: "awards", label: "Principais Prêmios" },
   ];
 
   let content;
