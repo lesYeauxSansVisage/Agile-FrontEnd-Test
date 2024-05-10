@@ -1,20 +1,39 @@
+@import '../../../sass/abstracts/mixins';
+
 .general {
     margin: 0 auto;
     display: grid;
     gap: 0 3rem;
-    grid-template-columns: max-content auto;
+    grid-template-columns: min-content auto;
     align-items: start;
     padding-top: 1rem;
+
+    @include respond(phone) {
+        grid-auto-columns: 100%;
+        grid-auto-rows: auto;
+        gap: 2rem 0;
+    }
 
 
     &__buttons {
         display: flex;
         justify-content: space-between;
         grid-column: 1 / 2;
+
+        @include respond(phone) {
+            grid-column: 1 / -1;
+        }
     }
 }
 
 .synopsis {
+    grid-column: 2 / 3;
+
+    @include respond(phone) {
+        grid-column: 1 / -1;
+
+    }
+
     &__title {
         font-size: 2rem;
         text-transform: uppercase;
@@ -24,9 +43,7 @@
 
     &__text {
         font-size: 1.5rem;
+        width: 100%;
         color: var(--light-grey-color-1);
     }
-
-
-    grid-column: 2 / 3;
 }
