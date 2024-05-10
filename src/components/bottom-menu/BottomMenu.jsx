@@ -46,6 +46,7 @@ const BottomMenu = () => {
           labels={bottomNavbarLabels}
           setActiveTab={changeTabActive}
           activeTab={activeTab}
+          hasIcon={true}
         />
       </div>
 
