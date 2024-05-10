@@ -15,9 +15,10 @@ const CustomNavbar = ({ labels, setActiveTab, activeTab }) => {
             className={`custom-navbar__option ${
               activeTab === label.id ? "active" : ""
             }`}
+            role="button"
             onClick={() => handleItemClick(label.id)}
           >
-            {label.labelText}
+            {label.label}
           </li>
         ))}
       </ul>
@@ -27,7 +28,7 @@ const CustomNavbar = ({ labels, setActiveTab, activeTab }) => {
 
 CustomNavbar.propTypes = {
   labels: PropTypes.arrayOf(
-    PropTypes.shape({ id: PropTypes.string, labelText: PropTypes.string })
+    PropTypes.shape({ id: PropTypes.string, label: PropTypes.string })
   ).isRequired,
   setActiveTab: PropTypes.func.isRequired,
   activeTab: PropTypes.string.isRequired,
