@@ -1,9 +1,15 @@
+@import '../../sass/abstracts/mixins';
+
 .season-info {
     width: 80%;
     flex-grow: 1;
     max-height: 100%;
     margin: 0 auto;
     overflow: hidden;
+
+    @include respond(phone) {
+        padding-top: 1.5rem;
+    }
 
 
     &__episodes {
@@ -20,9 +26,12 @@
 
 .season-info-wrapper {
     height: 100%;
-    max-height: 100%;
-    width: 300px;
+    max-width: 35rem;
     margin-left: auto;
     display: flex;
     flex-direction: column;
+
+    @include respond(phone) {
+        margin: 0 auto;
+    }
 }
