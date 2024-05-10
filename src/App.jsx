@@ -5,6 +5,7 @@ import BottomMenu from "./components/bottom-menu/BottomMenu";
 import { useEpisode } from "./hooks/UseEpisode";
 import { useTvShow } from "./hooks/UseTvShow";
 import LoadingSpinner from "./components/UI/LoadingSpinner";
+import Backdrop from "./components/UI/Backdrop";
 
 function App() {
   const { isLoading: isShowLoading } = useEpisode();
@@ -12,9 +13,9 @@ function App() {
 
   if (isEpisodesLoading || isShowLoading) {
     return (
-      <div className="loading-container">
+      <Backdrop>
         <LoadingSpinner />
-      </div>
+      </Backdrop>
     );
   }
 
