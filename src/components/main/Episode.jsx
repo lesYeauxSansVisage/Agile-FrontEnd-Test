@@ -2,8 +2,14 @@ import { useState } from "react";
 import "./Episode.scss";
 import EpisodeSynopsis from "./EpisodeSynopsis";
 import { PlaySmallPlayerIcon } from "../Icons";
+import PropTypes from "prop-types";
 
-const Episode = () => {
+const Episode = ({
+  episodeNumber,
+  episodeTitle,
+  episodeSynopsis,
+  episodeImage,
+}) => {
   const [isSynopsisVisible, setIsSynopsisVisible] = useState(false);
 
   const handleClick = () => {
@@ -12,16 +18,25 @@ const Episode = () => {
 
   return (
     <li className="episode">
-      <span className="episode__number">1</span>
-      <span className="episode__title">Nice Work</span>
+      <span className="episode__number">{episodeNumber}</span>
+      <span className="episode__title">{episodeTitle}</span>
 
       <button className="episode__play-button" onClick={() => handleClick()}>
         <PlaySmallPlayerIcon />
       </button>
 
-      {isSynopsisVisible && <EpisodeSynopsis />}
+      {isSynopsisVisible && (
+        <EpisodeSynopsis synopsis={episodeSynopsis} img={episodeImage} />
+      )}
     </li>
   );
+};
+
+Episode.propTypes = {
+  episodeNumber: PropTypes.number.isRequired,
+  episodeTitle: PropTypes.string.isRequired,
+  episodeSynopsis: PropTypes.string.isRequired,
+  episodeImage: PropTypes.string.isRequired,
 };
 
 export default Episode;
