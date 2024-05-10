@@ -8,13 +8,23 @@ import LoadingSpinner from "./components/UI/LoadingSpinner";
 import Backdrop from "./components/UI/Backdrop";
 
 function App() {
-  const { isLoading: isShowLoading } = useEpisode();
-  const { isLoading: isEpisodesLoading } = useTvShow();
+  const { isLoading: isShowLoading, error: episodeHasError } = useEpisode();
+  const { isLoading: isEpisodesLoading, error: tvShowHasError } = useTvShow();
 
   if (isEpisodesLoading || isShowLoading) {
     return (
       <Backdrop>
         <LoadingSpinner />
+      </Backdrop>
+    );
+  }
+
+  if (tvShowHasError || episodeHasError) {
+    return (
+      <Backdrop>
+        <p style={{ fontSize: "3rem" }}>
+          Houve um erro ao tentar buscar os dados sobre o show.
+        </p>
       </Backdrop>
     );
   }
