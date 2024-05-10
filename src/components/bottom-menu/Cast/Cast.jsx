@@ -3,19 +3,9 @@ import "./Cast.scss";
 import CastItem from "./CastItem";
 import { useRef } from "react";
 import { LeftArrowIcon, RightArrowIcon } from "../../Icons";
+import { useTvShow } from "../../../hooks/UseTvShow";
 
 const ITEM_SIZE = 150;
-
-const DATA_EXAMPLE = [
-  { character: "Saul Goodman", actor: "James Mcgill" },
-  { character: "Saul Goodman", actor: "James Mcgill" },
-  { character: "Saul Goodman", actor: "James Mcgill" },
-  { character: "Saul Goodman", actor: "James Mcgill" },
-  { character: "Saul Goodman", actor: "James Mcgill" },
-  { character: "Saul Goodman", actor: "James Mcgill" },
-  { character: "Saul Goodman", actor: "James Mcgill" },
-  { character: "Saul Goodman", actor: "James Mcgill" },
-];
 
 const Cast = () => {
   const [carouselInfo, setCarouselInfo] = useState({
@@ -23,9 +13,11 @@ const Cast = () => {
     MAX_LEFT: 0,
   });
 
-  const castRef = useRef();
+  const { showData } = useTvShow();
 
-  console.log(carouselInfo);
+  const cast = showData.Cast;
+
+  const castRef = useRef();
 
   const leftArrowHidden = carouselInfo.currentPositon === 0;
   const rightArrowHidden =
@@ -33,7 +25,6 @@ const Cast = () => {
     carouselInfo.currentPositon === carouselInfo.MAX_LEFT;
 
   useEffect(() => {
-    console.log("effect used");
     if (castRef.current) {
       const MAX_LEFT =
         castRef.current.scrollWidth - castRef.current.offsetWidth;
@@ -90,12 +81,8 @@ const Cast = () => {
         )}
 
         <div className="cast" ref={castRef}>
-          {DATA_EXAMPLE.map((item, index) => (
-            <CastItem
-              key={index}
-              actor={item.actor}
-              character={item.character}
-            />
+          {cast.map((item) => (
+            <CastItem key={item.ID} actor={item.Name} />
           ))}
         </div>
       </div>
