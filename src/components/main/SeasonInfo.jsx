@@ -44,10 +44,11 @@ const SeasonInfo = () => {
           labels={seasonsLabels}
           setActiveTab={changeActiveTab}
           activeTab={activeTab}
+          hasIcon={false}
         />
         <motion.ul
           key={activeTab}
-          className="season-info__episodes"
+          className="season-info__episodes no-scrollbar"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}

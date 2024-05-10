@@ -88,7 +88,7 @@ const Cast = () => {
           </button>
         )}
 
-        <div className="cast" ref={castRef}>
+        <div className="cast no-scrollbar" ref={castRef}>
           {cast.map((item) => (
             <CastItem key={item.ID} actor={item.Name} />
           ))}
