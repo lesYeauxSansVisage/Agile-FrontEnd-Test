@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import "./Episode.scss";
 import EpisodeSynopsis from "./EpisodeSynopsis";
 import { PlaySmallPlayerIcon } from "../Icons";
@@ -11,6 +11,15 @@ const Episode = ({
   episodeImage,
 }) => {
   const [isSynopsisVisible, setIsSynopsisVisible] = useState(false);
+
+  const ref = useCallback(
+    (node) => {
+      if (node !== null && isSynopsisVisible) {
+        node.scrollIntoView();
+      }
+    },
+    [isSynopsisVisible]
+  );
 
   const handleClick = () => {
     setIsSynopsisVisible(isSynopsisVisible ? false : true);
@@ -26,7 +35,11 @@ const Episode = ({
       </button>
 
       {isSynopsisVisible && (
-        <EpisodeSynopsis synopsis={episodeSynopsis} img={episodeImage} />
+        <EpisodeSynopsis
+          ref={ref}
+          synopsis={episodeSynopsis}
+          img={episodeImage}
+        />
       )}
     </li>
   );

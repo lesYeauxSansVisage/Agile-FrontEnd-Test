@@ -1,16 +1,17 @@
+import { forwardRef } from "react";
 import "./EpisodeSynopsis.scss";
 import PropTypes from "prop-types";
 
-const EpisodeSynopsis = ({ synopsis, img }) => {
+const EpisodeSynopsis = forwardRef(function EpisodeSynopsis(props, ref) {
   return (
-    <div className="episode-synopsis">
+    <div className="episode-synopsis" ref={ref}>
       <div className="episode-synopsis__img-container">
-        <img src={img} />
+        <img src={props.img} />
       </div>
-      <p className="episode-synopsis__text">{synopsis}</p>
+      <p className="episode-synopsis__text">{props.synopsis}</p>
     </div>
   );
-};
+});
 
 EpisodeSynopsis.propTypes = {
   synopsis: PropTypes.string.isRequired,
