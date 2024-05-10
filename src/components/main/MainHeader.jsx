@@ -1,16 +1,18 @@
 import "./MainHeader.scss";
-import exampleData from "../../example-data";
+import { useTvShow } from "../../hooks/UseTvShow";
 
 const MainHeader = () => {
-  const genres = exampleData.Genres.map(
-    (genre) => genre.Title && genre.Title
-  ).join(" ");
+  const { showData } = useTvShow();
+
+  const title = showData.Title;
+  const genres = showData.Genres.map((genre) => genre.Title).join(" ");
+  const year = showData.Year;
 
   return (
     <header className="main__header">
-      <h1 className="main__header__title">{exampleData.Title}</h1>
+      <h1 className="main__header__title">{title}</h1>
       <p className="main__header__info">
-        {genres} / {exampleData.Year}
+        {genres} / {year}
       </p>
     </header>
   );
