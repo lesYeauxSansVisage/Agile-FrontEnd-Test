@@ -1,5 +1,6 @@
 import "./MainHeader.scss";
 import { useTvShow } from "../../hooks/UseTvShow";
+import { CloseIcon } from "../Icons";
 
 const MainHeader = () => {
   const { showData } = useTvShow();
@@ -9,11 +10,15 @@ const MainHeader = () => {
   const year = showData.Year;
 
   return (
-    <header className="main__header">
-      <h1 className="main__header__title">{title}</h1>
-      <p className="main__header__info">
+    <header className="main-header">
+      <h1 className="main-header__title">{title}</h1>
+      <h2 className="main-header__info">
         {genres} / {year}
-      </p>
+      </h2>
+
+      <button className="main-header__close-button">
+        <CloseIcon />
+      </button>
     </header>
   );
 };

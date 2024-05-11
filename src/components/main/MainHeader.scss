@@ -1,11 +1,12 @@
 @import '../../sass/abstracts/mixins';
 
 .main {
-    &__header {
+    &-header {
         width: 80%;
         margin: 0 auto;
         padding: 2rem 0;
         padding-bottom: 0;
+        position: relative;
 
         &__title {
             color: var(--white-color);
@@ -13,7 +14,7 @@
             font-weight: 700;
             letter-spacing: 2px;
 
-            @include respond(tab-land) {
+            @include respond(tab-port) {
                 font-size: 3rem;
             }
         }
@@ -29,7 +30,21 @@
                 font-size: 1.5rem;
             }
         }
+
+        &__close-button {
+            position: absolute;
+            top: 2rem;
+            right: 0;
+
+            &>svg {
+                height: 3rem;
+                width: 3rem;
+                stroke: var(--dark-grey-color-1) !important;
+            }
+        }
     }
+
+
 
     &>* {
         @include respond(big-desktop) {
