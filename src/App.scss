@@ -22,7 +22,7 @@
     repeating-linear-gradient(90deg,
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.9)),
-    url('/wallpapersden.com_penny-dreadful-1_3840x2400.jpg');
+    var(--background-img);
 
     background-position: top;
     background-size: cover;
