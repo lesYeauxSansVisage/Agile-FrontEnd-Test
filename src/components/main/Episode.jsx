@@ -22,16 +22,20 @@ const Episode = ({
     [isSynopsisVisible]
   );
 
-  const handleClick = () => {
+  const handleEpisodeClick = () => {
     setIsSynopsisVisible(isSynopsisVisible ? false : true);
   };
 
+  const handleButtonClick = (event) => {
+    event.stopPropagation();
+  };
+
   return (
-    <li className="episode">
+    <li className="episode" onClick={() => handleEpisodeClick()}>
       <span className="episode__number">{episodeNumber}</span>
       <span className="episode__title">{episodeTitle}</span>
 
-      <button className="episode__play-button" onClick={() => handleClick()}>
+      <button className="episode__play-button" onClick={handleButtonClick}>
         <PlaySmallPlayerIcon />
       </button>
 
