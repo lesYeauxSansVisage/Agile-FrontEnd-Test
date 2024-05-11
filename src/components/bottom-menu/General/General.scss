@@ -8,6 +8,10 @@
     align-items: start;
     padding-top: 1rem;
 
+    @include respond(tab-land) {
+        gap: 1.5rem;
+    }
+
     @include respond(phone) {
         grid-auto-columns: 100%;
         grid-auto-rows: auto;
@@ -29,9 +33,14 @@
 .synopsis {
     grid-column: 2 / 3;
 
+    @include respond(tab-land) {
+        overflow-y: scroll;
+        height: 6rem;
+    }
+
     @include respond(phone) {
         grid-column: 1 / -1;
-
+        height: auto;
     }
 
     &__title {
@@ -39,11 +48,20 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         color: var(--light-grey-color-1);
+
+        @include respond(tab-land) {
+            font-size: 1.5rem;
+        }
     }
 
     &__text {
         font-size: 1.5rem;
         width: 100%;
         color: var(--light-grey-color-1);
+
+        @include respond(tab-land) {
+            font-size: 1.4rem;
+
+        }
     }
 }

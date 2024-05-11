@@ -1,3 +1,5 @@
+@import '../../../sass/abstracts/mixins';
+
 .general-button {
     background-color: transparent;
     display: flex;
@@ -7,19 +9,36 @@
     gap: 1rem;
     height: 7rem;
     width: 7rem;
+    transition: 0.3s all ease;
+    color: var(--light-grey-color-2);
 
-    &__icon {
-        fill: var(--light-grey-color-2);
-        height: 4rem;
-        width: 4rem;
+    @include respond(tab-land) {
+        gap: 0.5rem;
+        height: 5rem;
+        width: 6rem;
+    }
+
+    &:hover {
+        transform: scale(1.02);
+        color: var(--light-grey-color-1);
+    }
+
+    &>svg {
+        fill: var(--light-grey-color-1);
+        height: 5rem;
+        width: 5rem;
+
+        @include respond(tab-land) {
+            height: 4rem;
+            width: 4rem;
+        }
+
     }
 
     &__label {
+        color: inherit;
         font-size: 1.2rem;
-        color: var(--light-grey-color-2);
         width: 100%;
-
-
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
