@@ -6,10 +6,21 @@ import { useEpisode } from "./hooks/UseEpisode";
 import { useTvShow } from "./hooks/UseTvShow";
 import LoadingSpinner from "./components/UI/LoadingSpinner";
 import Backdrop from "./components/UI/Backdrop";
+import { useEffect } from "react";
 
 function App() {
   const { isLoading: isShowLoading, error: episodeHasError } = useEpisode();
-  const { isLoading: isEpisodesLoading, error: tvShowHasError } = useTvShow();
+  const {
+    showData,
+    isLoading: isEpisodesLoading,
+    error: tvShowHasError,
+  } = useTvShow();
+
+  useEffect(() => {
+    if (showData) {
+      document.title = showData.Title;
+    }
+  }, [showData]);
 
   if (isEpisodesLoading || isShowLoading) {
     return (
