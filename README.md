@@ -1,8 +1,18 @@
-# React + Vite
+# Teste para Desenvolvedor Front da Agile Content
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O objetivo do teste é desenvolver uma página de detalhes de um programa de televisão para uma aplicação.
+O projeto foi criado usando Vite. Para o CSS foi utilizado SCSS.
 
-Currently, two official plugins are available:
+## Pré-Requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Antes de tudo, verifique se tem os requisitos necessários:
+
+- Node: 16.20.0
+- NPM: 8.19.14
+
+## Instalação
+
+1. Faça o download ou o clone do projeto no diretório desejado
+2. Instale as depêndencias usando o comando `npm install`
+3. Para rodar a aplicação, use o comando `npm run dev`
+4. Acesse o link que irá aparecer no seu terminal
