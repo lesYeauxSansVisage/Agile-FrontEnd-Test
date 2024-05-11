@@ -34,7 +34,7 @@ const General = () => {
           <ShareIcon />
         </GeneralOptionButton>
       </div>
-      <div className="synopsis">
+      <div className="synopsis no-scrollbar">
         <h2 className="synopsis__title">Sinopse</h2>
         <p className="synopsis__text">{synopsis}</p>
       </div>
