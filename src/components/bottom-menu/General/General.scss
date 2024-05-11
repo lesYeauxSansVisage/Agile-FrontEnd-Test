@@ -61,7 +61,10 @@
 
         @include respond(tab-land) {
             font-size: 1.4rem;
+        }
 
+        @include respond(phone) {
+            font-size: 1.6rem;
         }
     }
 }
