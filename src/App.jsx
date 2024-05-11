@@ -22,7 +22,7 @@ function App() {
   if (tvShowHasError || episodeHasError) {
     return (
       <Backdrop>
-        <p style={{ fontSize: "3rem" }}>
+        <p className="error-message">
           Houve um erro ao tentar buscar os dados sobre o show.
         </p>
       </Backdrop>

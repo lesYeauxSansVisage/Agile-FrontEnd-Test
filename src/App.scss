@@ -28,3 +28,11 @@
     flex-direction: column;
   }
 }
+
+.error-message {
+  width: 80%;
+  max-width: 60rem;
+  color: var(--light-grey-color-1);
+  text-align: center;
+  font-size: 3rem;
+}
