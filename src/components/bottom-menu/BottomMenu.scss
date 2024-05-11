@@ -6,7 +6,6 @@
     height: 17rem;
     padding-top: 1rem;
 
-
     @include respond(tab-land) {
         height: 14rem;
     }
@@ -14,7 +13,6 @@
     @include respond(phone) {
         height: 30rem;
     }
-
 
 
     @include respond(big-desktop) {
