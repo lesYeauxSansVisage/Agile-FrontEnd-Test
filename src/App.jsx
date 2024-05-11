@@ -42,15 +42,13 @@ function App() {
 
   return (
     <div className="container">
-      <section>
-        <div className="main">
-          <MainHeader />
+      <div className="main">
+        <MainHeader />
 
-          <SeasonInfo />
-        </div>
+        <SeasonInfo />
+      </div>
 
-        <BottomMenu />
-      </section>
+      <BottomMenu />
     </div>
   );
 }
